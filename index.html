@@ -1,11 +1,81 @@
 <!DOCTYPE html>
 <html lang="ko">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="TodoList" content="width=device-width, initial-scale=1.0">
-        <title>투두리스트</title>
-    </head>
-    <body>
-        
-    </body>
+
+<head>
+    <!-- 문서의 문자 인코딩을 UTF-8로 설정 (한글 지원) -->
+    <meta charset="UTF-8" />
+    <title>Bootstrap TODO List</title>
+    <!-- 부트스트랩 CSS 파일 링크 - CDN 방식으로 연결 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="todo.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- 상단 네비게이션 바 -->
+    <!-- navbar-expand-lg: 대형 화면에서 메뉴가 펼쳐짐 -->
+    <!-- navbar-dark: 어두운 테마, bg-dark: 배경색 어둡게 -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <!-- container-fluid: 화면 전체 너비를 사용하는 컨테이너 -->
+        <div class="container-fuild">
+            <!-- navbar-brand: 브랜드/로고를 위한 스타일 -->
+            <a href="#" class="navbar-brand">TODO List</a>
+        </div>
+    </nav>
+
+    <!-- 메인 컨테이너 -->
+    <!-- container: 반응형 고정 너비 컨테이너 -->
+    <div class="container">
+        <!-- row: 행을 나타내는 그리드 시스템 -->
+        <!-- justify-content-center: 수평 중앙 정렬 -->
+        <div class="row justify-content-center">
+            <!-- col-6: 12칸 그리드 중 6칸 차지 (화면의 절반) -->
+            <div class="col-6">
+                <!-- mt-5: margin-top 5단계 (3rem) -->
+                <!-- text-center: 텍스트 중앙 정렬 -->
+                <h1 class="mt-5 text-center">TODO List</h1>
+
+                <!-- my-3: 상하 마진 3단계 (1rem) -->
+                <!-- input-group: 입력 필드와 버튼을 묶는 컨테이너 -->
+                <div class="input-group my-3">
+                    <!-- form-control: 부트스트랩 기본 입력 필드 스타일 -->
+                    <input type="text" class="form-control" id="todoInput" placeholder="할 일" />
+                    <!-- btn: 버튼 기본 클래스, btn-primary: 파란색 테마 -->
+                    <button class="btn btn-primary" id="addTodo">
+                        추가
+                    </button>
+                </div>
+                <!-- Progress Bar Section -->
+                <div class="progress my-4">
+                    <!-- 부트스트랩 progress-bar 스타일 적용 -->
+                    <div class="progress-bar" id="progressBar" role="progressbar" style="width: 0%;" aria-valuenow="0"
+                        aria-valuemin="0" aria-valuemax="100">
+                        0%
+                    </div>
+                </div>
+
+                <!-- Search Filter Section -->
+                <div class="row">
+                    <div class="col-3"> <!-- 전체 12 컬럼 중 3칸만 사용 (1/4 크기) -->
+                        <div class="input-group my-3">
+                            <span class="input-group-text">필터</span>
+                            <input type="text" class="form-control" id="searchFilter" placeholder="예: 저녁" />
+                        </div>
+                    </div>
+                </div>
+                <!-- list-group: 부트스트랩 리스트 그룹 스타일 -->
+                <!-- todoList: JavaScript에서 참조할 ID -->
+                <ul class="list-group" id="todoList"></ul>
+            </div>
+        </div>
+
+        <!-- 부트스트랩 JavaScript 번들 (Popper.js 포함) -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- 사용자 정의 JavaScript 파일 -->
+        <script src="todo.js"></script>
+        <script src="progress.js"></script>
+        <script src="feat_search+filter.js"></script>
+
+    </div>
+</body>
+
 </html>

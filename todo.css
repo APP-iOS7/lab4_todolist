@@ -1,0 +1,119 @@
+body {
+    background-color: #f8f9fa;
+}
+.navbar {
+    padding: 1rem;
+}
+.navbar a {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+h1 {
+    color: #343a40;
+}
+/* 추가 버튼 */
+.btn-primary {
+    border-color: #51565c;
+    background-color: #51565c;
+    color: white;
+}
+.btn-primary:hover {
+    border-color: #343a40;;
+    background-color: #343a40;
+    color: white;
+}
+.btn-primary:active {
+    border-color: #343a40!important;
+    background-color: #343a40!important;
+    color: white;
+}
+/* 입력창 */
+.input-group {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+#todoInput {
+    border-right: none;
+}
+#todoInput:focus {
+    border-color: #797979;
+    box-shadow: 0 0 5px #797979;
+    outline: none;
+}
+#todoInput::placeholder {
+    color: #afafaf; 
+    font-style: italic; 
+}
+
+/* 진행률 색상 */
+.progress-bar {
+    background-color: #51565c;
+}
+
+/* 모든 버튼에 적용 */
+.btn {
+    font-size: 14px;
+    border-radius: 3px;
+}
+
+/* 삭제 버튼에만 적용 */
+.btn-danger {
+    background-color: #ff6666;
+    color: white;
+    border: none;
+}
+
+.btn-danger:hover {
+    background-color: #cc0000;
+}
+
+/* 수정, 저장 버튼에만 적용 */
+.btn-info {
+    background-color: #51565c;
+    color: white;
+    border: none;
+}
+
+.btn-info:hover {
+    background-color: #343a40;
+    color: white;
+}
+
+.form-check-input:checked {
+    background-color: #51565c;
+    border-color: #51565c;
+}
+.form-check-input:checked + span {
+    color: #afafaf;
+}
+
+/* 체크박스 선택 해제 후 */
+.form-check-input:not(:checked) {
+    border-color: none;
+}
+
+/* 체크박스 호버 시 */
+.form-check-input:hover {
+    box-shadow: 0 0 10px rgba(126, 126, 126, 0.6);
+    border-color: #343a40;
+}
+
+/* 체크박스 포커스 상태 */
+.form-check-input:focus {
+    box-shadow: 0 0 10px rgba(126, 126, 126, 0.6);
+    border-color: #343a40;
+}
+input.ms-2 {
+    color: #797979;
+    border: 1px solid #797979;
+    border-radius: 3px;
+}
+input.ms-2:focus {
+    outline: none;
+    border: 1px solid #797979;
+    border-radius: 3px;
+    box-shadow: 0 0 5px #797979;
+}
