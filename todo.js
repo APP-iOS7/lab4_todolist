@@ -102,6 +102,7 @@ function initialize() {
 
     // 입력창 초기화
     todoInput.value = "";
+    
   });
 }
 function editTodo() {
