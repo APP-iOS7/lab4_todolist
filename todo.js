@@ -104,6 +104,9 @@ function initialize() {
     todoInput.value = "";
   });
 }
+function editTodo() {
+    
+}
 
 // DOMContentLoaded 이벤트 발생 시 초기화 함수 호출
 document.addEventListener("DOMContentLoaded", initialize);
