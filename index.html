@@ -47,15 +47,19 @@
                 <!-- Progress Bar Section -->
                 <div class="progress my-4">
                     <!-- 부트스트랩 progress-bar 스타일 적용 -->
-                    <div
-                        class="progress-bar"
-                        id="progressBar"
-                        role="progressbar"
-                        style="width: 0%;"
-                        aria-valuenow="0"
-                        aria-valuemin="0"
-                        aria-valuemax="100">
+                    <div class="progress-bar" id="progressBar" role="progressbar" style="width: 0%;" aria-valuenow="0"
+                        aria-valuemin="0" aria-valuemax="100">
                         0%
+                    </div>
+                </div>
+
+                <!-- Search Filter Section -->
+                <div class="row">
+                    <div class="col-3"> <!-- 전체 12 컬럼 중 3칸만 사용 (1/4 크기) -->
+                        <div class="input-group my-3">
+                            <span class="input-group-text">필터</span>
+                            <input type="text" class="form-control" id="searchFilter" placeholder="예: 저녁" />
+                        </div>
                     </div>
                 </div>
                 <!-- list-group: 부트스트랩 리스트 그룹 스타일 -->
