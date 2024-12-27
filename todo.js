@@ -133,13 +133,19 @@ function initialize() {
 
     // 추가 버튼 클릭 이벤트 리스너 추가
     addButton.addEventListener("click", () => {
-        if (todoInput.value.trim() === "") return; // 빈 입력값 방지
+        if (todoInput.value.trim() === "") {
+          alert("텍스트를 입력하세요");
+          return; // 빈 입력값 방지
+        }
+        const todos = loadTodos(); // 기존 할일 목록 불러오기
+        if (todos.indexOf(todoInput.value) < 0) { //indexOf(): 해당 값의 인덱스를 알려줌. 없으면 -1 반환
+          alert("중복 태스크가 존재합니다.");
+        }
 
         // 새로운 할일 항목을 추가
         addTodo(todoInput.value);
 
         // localStorage에 새로 추가된 할일 저장
-        const todos = loadTodos(); // 기존 할일 목록 불러오기
         const todoData = {
             text: todoInput.value, // 입력된 텍스트
             checked: false, // 기본 완료 상태는 false
