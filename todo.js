@@ -126,6 +126,30 @@ function saveTodos(todos) {
     localStorage.setItem("todoList", JSON.stringify(todos)); // 할일 목록을 JSON 문자열로 변환하여 저장
 }
 
+//-----------------
+// const searchFilter = document.getElementById('searchFilter');
+// const todoList = document.getElementById('todoList');
+
+// function isDup() {
+//     // 검색어 가져오기 (소문자로 변환하여 대소문자 구분 없이 검색)
+//     const searchTerm = searchFilter.value.toLowerCase();
+    
+//     // 모든 할일 항목을 순회
+//     const todoItems = todoList.getElementsByTagName('li');
+//     Array.from(todoItems).forEach(item => {
+//         // 각 항목의 텍스트 내용 가져오기 (span 요소 내의 텍스트)
+//         const todoText = item.querySelector('span').textContent.toLowerCase();
+        
+//         // 검색어가 있고, 할일 텍스트에 검색어와 동일하면
+//         if (searchTerm && todoText === todoInput.value) {
+//             // 알럿 발생
+//             alert("중복 태스크가 존재합니다.");
+//             return true;
+//         }
+//     });
+//     return false;
+// }
+
 // 페이지 로드 시 초기화 작업을 수행하는 함수
 function initialize() {
     // localStorage에서 저장된 할일 목록 불러오기
@@ -144,14 +168,13 @@ function initialize() {
           alert("텍스트를 입력하세요");
           return; // 빈 입력값 방지
         }
-        const todos = loadTodos(); // 기존 할일 목록 불러오기
-        if (todos.indexOf(todoInput.value) < 0) { //indexOf(): 해당 값의 인덱스를 알려줌. 없으면 -1 반환
-          alert("중복 태스크가 존재합니다.");
-        }
+        // if (checkDup) return;
 
+        
         // 새로운 할일 항목을 추가
         addTodo(todoInput.value);
-
+        
+        const todos = loadTodos(); // 기존 할일 목록 불러오기
         // localStorage에 새로 추가된 할일 저장
         const todoData = {
             text: todoInput.value, // 입력된 텍스트
@@ -180,5 +203,30 @@ document.addEventListener("DOMContentLoaded", initialize);
 4. 리스트 내 인덱스 위치를 스왑
 5. 수정 버튼을 다시 선택하면 해당 인풋 값으로 
 
+// DOM 요소 선택
+const searchFilter = document.getElementById('searchFilter');
+const todoList = document.getElementById('todoList');
+
+// 검색어에 따라 할일 항목들을 필터링하는 함수
+function filterTodos() {
+    // 검색어 가져오기 (소문자로 변환하여 대소문자 구분 없이 검색)
+    const searchTerm = searchFilter.value.toLowerCase();
+    
+    // 모든 할일 항목을 순회
+    const todoItems = todoList.getElementsByTagName('li');
+    Array.from(todoItems).forEach(item => {
+        // 각 항목의 텍스트 내용 가져오기 (span 요소 내의 텍스트)
+        const todoText = item.querySelector('span').textContent.toLowerCase();
+        
+        // 검색어가 있고, 할일 텍스트에 검색어와 동일하면
+        if (searchTerm && todoText === ) {
+            // 알럿 발생
+            item.style.backgroundColor = '#e8f5e9';
+        }
+    });
+}
+
+// 입력창에 입력이 있을 때마다 필터링 함수 실행
+searchFilter.addEventListener('input', filterTodos);
 
 */
