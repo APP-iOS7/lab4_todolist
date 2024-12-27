@@ -42,6 +42,9 @@ function addTodo(text, checked = false) {
         const index = Array.from(li.parentElement.children).indexOf(li); // 현재 <li>의 인덱스 찾기
         todos[index].checked = checkbox.checked; // 해당 항목의 완료 상태 업데이트
         saveTodos(todos); // 업데이트된 할일 목록 저장
+
+        updateProgressBar();
+
     });
 
     // 삭제 버튼 생성
@@ -55,6 +58,8 @@ function addTodo(text, checked = false) {
         todos.splice(index, 1); // 해당 인덱스 항목 삭제
         saveTodos(todos); // 업데이트된 할일 목록 저장
         li.remove(); // 화면에서 <li> 요소 삭제
+
+        updateProgressBar();
     });
 
     // 수정 버튼 생성
@@ -94,10 +99,9 @@ function addTodo(text, checked = false) {
             const index = Array.from(li.parentElement.children).indexOf(li);
             todos[index].text = spanElement.textContent;
             saveTodos(todos);
+
+            updateProgressBar();
         });
-
-
-
 
     });
 
@@ -108,6 +112,7 @@ function addTodo(text, checked = false) {
     li.append(editButton); // 에딧 버튼 추가 
     li.append(deleteButton); // 삭제 버튼을 가장 뒤에 추가
     todoListElement.append(li); // <li>를 할일 목록 <ul>에 추가
+
 }
 
 // localStorage에서 저장된 할일 목록을 불러오는 함수
@@ -131,6 +136,8 @@ function initialize() {
         addTodo(todo.text, todo.checked); // 각 항목을 추가
     });
 
+    updateProgressBar();
+
     // 추가 버튼 클릭 이벤트 리스너 추가
     addButton.addEventListener("click", () => {
         if (todoInput.value.trim() === "") return; // 빈 입력값 방지
@@ -149,6 +156,8 @@ function initialize() {
 
         // 입력창 초기화
         todoInput.value = "";
+
+        updateProgressBar();
 
     });
 }
