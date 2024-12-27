@@ -174,8 +174,8 @@ function initialize() {
         // 새로운 할일 항목을 추가
         addTodo(todoInput.value);
         
-        const todos = loadTodos(); // 기존 할일 목록 불러오기
         // localStorage에 새로 추가된 할일 저장
+        const todos = loadTodos(); // 기존 할일 목록 불러오기
         const todoData = {
             text: todoInput.value, // 입력된 텍스트
             checked: false, // 기본 완료 상태는 false
@@ -195,38 +195,10 @@ function initialize() {
 // DOMContentLoaded 이벤트 발생 시 초기화 함수 호출
 document.addEventListener("DOMContentLoaded", initialize);
 
-
 /*
 1. 수정 버튼 누름
 2. 수정 버튼 함수 작동
 3. 함수 내에서 input 성격의 똑같이 생긴 테스크 생성
 4. 리스트 내 인덱스 위치를 스왑
 5. 수정 버튼을 다시 선택하면 해당 인풋 값으로 
-
-// DOM 요소 선택
-const searchFilter = document.getElementById('searchFilter');
-const todoList = document.getElementById('todoList');
-
-// 검색어에 따라 할일 항목들을 필터링하는 함수
-function filterTodos() {
-    // 검색어 가져오기 (소문자로 변환하여 대소문자 구분 없이 검색)
-    const searchTerm = searchFilter.value.toLowerCase();
-    
-    // 모든 할일 항목을 순회
-    const todoItems = todoList.getElementsByTagName('li');
-    Array.from(todoItems).forEach(item => {
-        // 각 항목의 텍스트 내용 가져오기 (span 요소 내의 텍스트)
-        const todoText = item.querySelector('span').textContent.toLowerCase();
-        
-        // 검색어가 있고, 할일 텍스트에 검색어와 동일하면
-        if (searchTerm && todoText === ) {
-            // 알럿 발생
-            item.style.backgroundColor = '#e8f5e9';
-        }
-    });
-}
-
-// 입력창에 입력이 있을 때마다 필터링 함수 실행
-searchFilter.addEventListener('input', filterTodos);
-
 */
